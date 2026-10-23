@@ -1,1 +1,204 @@
+[index.html](https://github.com/user-attachments/files/33874269/index.html)
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nama Kamu | Web Developer</title>
+<meta name="description" content="Portofolio Nama Kamu: project, keahlian, dan kontak.">
+<meta property="og:title" content="Nama Kamu | Web Developer">
+<meta property="og:description" content="Portofolio Nama Kamu: project, keahlian, dan kontak.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EDF1F7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF1F7; --surface:#FFFFFF; --ink:#0F1B33; --muted:#56627C;
+  --line:#D3DBE8; --accent:#2F5BFF; --on-accent:#FFFFFF;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"DM Sans","Segoe UI",system-ui,sans-serif;
+  --pad:clamp(1.25rem,5vw,3rem);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1426; --surface:#142040; --ink:#EAF0FF; --muted:#9AA8C7;
+    --line:#26345A; --accent:#7C98FF; --on-accent:#0C1426; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1426; --surface:#142040; --ink:#EAF0FF; --muted:#9AA8C7;
+  --line:#26345A; --accent:#7C98FF; --on-accent:#0C1426; color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 var(--pad)}
 
+/* Navigasi */
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:3.75rem}
+.logo{font:800 1.125rem var(--display);text-decoration:none}
+nav{display:flex;gap:1.25rem;align-items:center}
+nav a{font-size:.95rem;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);width:2.25rem;height:2.25rem;border-radius:50%;cursor:pointer;font-size:1rem}
+
+/* Hero: nama besar adalah elemen utama */
+.hero{padding:clamp(3rem,10vw,7rem) 0 clamp(3rem,8vw,5rem)}
+.hero h1{font:800 clamp(3.25rem,13vw,9rem)/.92 var(--display);letter-spacing:-.04em;max-width:12ch;animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero p.lead{margin-top:1.75rem;max-width:34rem;font-size:clamp(1.1rem,2.6vw,1.3rem);color:var(--muted);animation:rise .8s .12s cubic-bezier(.2,.7,.2,1) both}
+.actions{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem;animation:rise .8s .22s cubic-bezier(.2,.7,.2,1) both}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:500;text-decoration:none;border:1px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{filter:brightness(1.08)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* Section */
+section{padding:clamp(2.5rem,7vw,4.5rem) 0;border-top:1px solid var(--line)}
+.sec{display:grid;gap:1.5rem}
+@media (min-width:56rem){.sec{grid-template-columns:13rem 1fr;gap:3rem}}
+h2{font:800 1.5rem var(--display);letter-spacing:-.02em}
+.about p{max-width:38rem}
+.about p+p{margin-top:1rem}
+
+/* Project: daftar baris, bukan kartu */
+.projects{list-style:none;padding:0}
+.projects li{border-bottom:1px solid var(--line)}
+.projects li:first-child{border-top:1px solid var(--line)}
+.projects a{display:grid;gap:.4rem;padding:1.4rem 0;text-decoration:none}
+@media (min-width:40rem){.projects a{grid-template-columns:1fr auto;gap:2rem;align-items:baseline}}
+.projects h3{font:800 1.35rem var(--display);letter-spacing:-.01em}
+.projects a:hover h3{color:var(--accent)}
+.projects p{color:var(--muted);max-width:34rem}
+.projects .tags{font-size:.9rem;color:var(--muted)}
+
+/* Skill */
+.skills{display:flex;flex-wrap:wrap;gap:.5rem}
+.skills span{padding:.35rem .9rem;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.95rem}
+
+/* Kontak */
+.contact-big{font:800 clamp(1.6rem,5vw,3rem)/1.1 var(--display);letter-spacing:-.03em;word-break:break-word}
+.contact-big a{text-decoration-thickness:3px;text-underline-offset:.2em;text-decoration-color:var(--accent)}
+.social{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:1.25rem}
+.social a{color:var(--muted)}
+.social a:hover{color:var(--ink)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+}
+@media (max-width:34rem){nav a.hide-sm{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">NK</a>
+    <nav aria-label="Navigasi utama">
+      <a class="hide-sm" href="#tentang">Tentang</a>
+      <a href="#project">Project</a>
+      <a href="#kontak">Kontak</a>
+      <button id="theme" type="button" aria-label="Ganti tema terang atau gelap">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="hero">
+      <h1>Nama Kamu</h1>
+      <p class="lead">Web developer di Semarang. Saya membuat website yang cepat, rapi, dan mudah dipakai di HP.</p>
+      <div class="actions">
+        <a class="btn primary" href="#project">Lihat project</a>
+        <a class="btn" href="#kontak">Hubungi saya</a>
+      </div>
+    </div>
+
+    <section id="tentang">
+      <div class="sec about">
+        <h2>Tentang</h2>
+        <div>
+          <p>Halo, saya Nama Kamu. Saya mengerjakan website untuk bisnis kecil, komunitas, dan kampus, mulai dari desain sampai website tayang.</p>
+          <p>Saat ini saya belajar [topik yang sedang dipelajari] dan terbuka untuk project freelance maupun kerja sama.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="sec">
+        <h2>Project</h2>
+        <ul class="projects">
+          <!-- EDIT: ganti judul, deskripsi, tag, dan link tiap project -->
+          <li><a href="https://github.com/username/project-1">
+            <div><h3>Website Toko Online</h3><p>Katalog produk dengan keranjang dan tombol pesan lewat WhatsApp.</p></div>
+            <span class="tags">HTML, CSS, JavaScript</span>
+          </a></li>
+          <li><a href="https://github.com/username/project-2">
+            <div><h3>Aplikasi Catatan Keuangan</h3><p>Mencatat pemasukan dan pengeluaran harian, dengan grafik bulanan.</p></div>
+            <span class="tags">React, Chart.js</span>
+          </a></li>
+          <li><a href="https://github.com/username/project-3">
+            <div><h3>Profil Organisasi Kampus</h3><p>Website informasi kegiatan, galeri, dan formulir pendaftaran anggota.</p></div>
+            <span class="tags">HTML, Tailwind CSS</span>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skill">
+      <div class="sec">
+        <h2>Keahlian</h2>
+        <div class="skills">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git &amp; GitHub</span>
+          <span>Desain UI di Figma</span><span>Responsive design</span><span>SEO dasar</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="sec">
+        <h2>Kontak</h2>
+        <div>
+          <p class="contact-big">Punya project? <a href="mailto:email@kamu.com">email@kamu.com</a></p>
+          <div class="social">
+            <!-- EDIT: ganti dengan akun kamu -->
+            <a href="https://instagram.com/username">Instagram</a>
+            <a href="https://github.com/username">GitHub</a>
+            <a href="https://linkedin.com/in/username">LinkedIn</a>
+            <a href="https://wa.me/6281234567890">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year">2026</span> Nama Kamu. Dibuat dengan HTML dan CSS.</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+(function(){
+  var root = document.documentElement, btn = document.getElementById('theme');
+  var dark = window.matchMedia('(prefers-color-scheme: dark)');
+  function isDark(){
+    var t = root.getAttribute('data-theme');
+    return t ? t === 'dark' : dark.matches;
+  }
+  btn.addEventListener('click', function(){
+    root.setAttribute('data-theme', isDark() ? 'light' : 'dark');
+  });
+})();
+</script>
+</body>
+</html>
